@@ -6,3 +6,4 @@ from django.http  import HttpResponse, Http404
 def dashboard_view(request):
     
 	return render(request, 'dashboard.html', {})
+

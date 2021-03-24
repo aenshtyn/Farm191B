@@ -17,12 +17,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url,include
 from django.views.generic import TemplateView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name="index.html")),
+    # url(r'^$', TemplateView.as_view(template_name="dashboard.html")),
     path('admin/', admin.site.urls),
-    url(r'^farm191/', include('base.urls')),
-    url(r'^farm191/', include('hr.urls')),
-    url(r'^farm191/', include('finance.urls')),
-    url(r'^farm191/', include('inventory.urls')),
+    path('', include('base.urls')),
+    path('hr/', include('hr.urls')),
+    path('finance/', include('finance.urls')),
+    path('inventory/', include('inventory.urls')),
+    path('api/', include('API.urls')),
 ]
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
