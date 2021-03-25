@@ -1,10 +1,13 @@
 from django.db import models
 
 # Create your models here.
+
+class Owner(models.Model):
+    name = models.CharField(max_length=30)
 class Cow(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
     age = models.CharField(max_length=255, blank=True, null=True)
-    owner = models.CharField(max_length=255, blank=True, null=True)
+    owner = models.ForeignKey(Owner, on_delete=models.CASCADE, blank=True, null=True)
 
 
     def __str__(self):
@@ -12,7 +15,7 @@ class Cow(models.Model):
 
     @classmethod
     def all_cows(cls):
-        cows = Cow.object.all()
+        cows = Cow.objects.all()
         return cows
 
 

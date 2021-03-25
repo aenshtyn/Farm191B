@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+<div class = "container">
+    <div class = "row">
+       {% for employee in employees %}
+       <div class="col-md-3 d-flex align-items-stretch">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ employee.picture.url }}" >
+
+            <div class="card-body">
+                <h5 class="card-title">{{employee.first_name}}</h5>
+                <!-- <p class="card-text">{{employee.age}}</p> -->
+                <hr>
+                <p class="card-text">{{employee.entry_designation}}</p>
+                <p class="card-text">{{employee.status}}</p>
+                
+                <p class="card-text">{{employee.date_joined}}</p>
+                <!-- <p class="card-text">{{employee.address }}</p> -->
+                <!-- <a data-target="#exampleModal" class="btn btn-primary">Read More</a> -->
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

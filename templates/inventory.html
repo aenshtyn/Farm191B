@@ -2,8 +2,28 @@
 
 {% block content %}
 
+<div class = "container">
+    <div class = "row">
+       {% for cow in cows %}
+       <div class="col-md-3 d-flex align-items-stretch">
+        <div class="card" style="width: 18rem;">
+            <!-- <img src="{{ cow.image.url }}" > -->
 
-inventory
+            <div class="card-body">
+                <h5 class="card-title">{{cow.name}}</h5>
+                <p class="card-text">{{cow.age}}</p>
+                <hr>
+                <p class="card-text">{{cow.owner}}</p>
+                <!-- <p class="card-text">{{cow.amount}}</p> -->
+                <!-- <p class="card-text">{{cow.address }}</p> -->
+                <!-- <a data-target="#exampleModal" class="btn btn-primary">Read More</a> -->
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 
+        </div>
+    </div>
 
+</div>
 {% endblock %}

@@ -6,7 +6,7 @@ from django.urls import path
 
 
 urlpatterns = [   
-     path('', views.dashboard_view, name='dashboard'),
+     path('', views.pie_chart, name='piechart'),
 ]
 
 if settings.DEBUG:

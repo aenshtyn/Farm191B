@@ -1,5 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http  import HttpResponse, Http404
+from .models import Employee
 
 # Create your views here.
 def hr(request):
-    return render(request, 'hr.html')
+    employees = Employee.all_employees()
+
+    return render(request, 'hr.html', {"employees": employees})
+
