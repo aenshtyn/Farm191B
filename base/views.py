@@ -12,10 +12,10 @@ def pie_chart(request):
     labels = []
     data = []
 
-    queryset = Cow.objects.order_by('age')[:5]
+    queryset = Cow.objects.order_by('-age')
     for cow in queryset:
         labels.append(cow.name)
-        data.append(cow.owner)
+        data.append(cow.age)
 
     return render(request, 'dashboard.html', {
         'labels': labels,

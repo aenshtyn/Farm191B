@@ -9,7 +9,7 @@ class Owner(models.Model):
        return self.name
 class Cow(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
-    age = models.CharField(max_length=255, blank=True, null=True)
+    age = models.PositiveIntegerField()
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):

@@ -1,17 +1,11 @@
-{%extends 'base.html'%}
-{% load bootstrap5 %}
-
-{% block title %}Home{% endblock %}
+{% extends 'base.html' %}
 
 {% block content %}
-
   <div id="container" style="width: 75%;">
     <canvas id="pie-chart"></canvas>
   </div>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
   <script>
 
     var config = {
@@ -22,7 +16,7 @@
           backgroundColor: [
             '#696969', '#808080', '#A9A9A9', '#C0C0C0', '#D3D3D3'
           ],
-          label: 'Ownership'
+          label: 'Population'
         }],
         labels: {{ labels|safe }}
       },
