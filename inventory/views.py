@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http  import HttpResponse, Http404
-from .models import Calf, Cow
+from .models import Calf, Cow, Owner
 
 # Create your views here.
 def inventory(request):

@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'base',
     'rest_framework',
     "bootstrap5",
+    'API',
 
      # CORS
     'corsheaders',

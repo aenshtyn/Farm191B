@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http  import HttpResponse, Http404
-from inventory.models import Cow
+from inventory.models import Cow, Owner
 
 # Create your views here.
 
@@ -12,7 +12,7 @@ def pie_chart(request):
     labels = []
     data = []
 
-    queryset = Cow.objects.order_by('owner')[:5]
+    queryset = Cow.objects.order_by('age')[:5]
     for cow in queryset:
         labels.append(cow.name)
         data.append(cow.owner)

@@ -4,11 +4,13 @@ from django.db import models
 
 class Owner(models.Model):
     name = models.CharField(max_length=30)
+
+    def __str__(self):
+       return self.name
 class Cow(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
     age = models.CharField(max_length=255, blank=True, null=True)
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE, blank=True, null=True)
-
 
     def __str__(self):
         return self.name
