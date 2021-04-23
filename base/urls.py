@@ -7,6 +7,8 @@ from django.urls import path
 
 urlpatterns = [   
      path('', views.pie_chart, name='piechart'),
+     path('index', views.index, name = 'index'),
+     path('morning_milk/', views.morning_milk_production, name='morning-milk-production'),
 ]
 
 if settings.DEBUG:

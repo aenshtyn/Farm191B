@@ -4,28 +4,61 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-  <div id="container" style="width: 75%;">
-    <canvas id="pie-chart"></canvas>
+
+<div class  = "row">
+  <div class = "col">
+    <div class = "card">
+      <div id="container" style="width: 75%;">
+        <canvas id="pie-chart"></canvas>
+      </div>
+    </div>
+  </div>
+  
+  <div class = "col">
+    <div class = "card">
+      <div id="container" style="width: 75%;">
+        <canvas id="pie-chart"></canvas>
+      </div>
+    </div>
   </div>
   </div>
+
+  <div class  = "row">
+    <div class = "col">
+      <div class = "card">
+        <div id="container" style="width: 75%;">
+          <canvas id="pie-chart"></canvas>
+        </div>
+      </div>
+    </div>
+    
+    <div class = "col">
+      <div class = "card">
+        <div id="container" style="width: 75%;">
+          <canvas id="pie-chart"></canvas>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+  
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
   <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script> -->
   <script>
 
-    var config = {
+    var morning = {
       type: 'pie',
       data: {
         datasets: [{
           data: {{ data|safe }},
-          backgroundColor: Array(56).fill('rgba(255, 99, 132, 0.5)'),
-          label: 'Ownership'
+          backgroundColor: [
+
+          "#7C4DFF",  "#448AFF",     "#00BCD4",    "#1DE9B6",
+            // '#696969', '#808080', '#A9A9A9', '#C0C0C0', '#D3D3D3'
+          ],
+          label: 'Volume'
         }],
         labels: {{ labels|safe }}
       },
@@ -36,8 +69,12 @@
 
     window.onload = function() {
       var ctx = document.getElementById('pie-chart').getContext('2d');
-      window.myPie = new Chart(ctx, config);
+      window.myPie = new Chart(ctx, morning);
     };
+  
+  
+
+
 
   </script>
 

@@ -4,6 +4,13 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
+
+class Owner(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+       return self.name
+
 class Employee(models.Model):
 #   user              = models.OneToOneField(User, related_name="Employee",blank=True, null=True,on_delete=models.CASCADE)
     first_name= models.CharField(max_length=255, blank=True, null=True) 
@@ -30,3 +37,4 @@ class Employee(models.Model):
     def all_employees(cls):
         employees = Employee.objects.all()
         return employees
+
